@@ -36,20 +36,22 @@ def avaliacao_musicas(x):
         return 'mediana'
     else:
         return 'ruim'
+    
+if __name__ == '__main__': 
 
-notas_rock = [5, 1, 4, 0, 2, 5, 2, 1, 0, 5, 5, 3, 5, 2, 5, 5, 3, 5, 4, 4]
-notas_pop = [3, 2, 5, 1, 2, 1, 4, 1, 5, 0, 4, 2, 1, 2, 5, 2, 4, 4, 0, 1]
+    notas_rock = [5, 1, 4, 0, 2, 5, 2, 1, 0, 5, 5, 3, 5, 2, 5, 5, 3, 5, 4, 4]
+    notas_pop = [3, 2, 5, 1, 2, 1, 4, 1, 5, 0, 4, 2, 1, 2, 5, 2, 4, 4, 0, 1]
 
-# notas avaliadas de acordo com as categorias boa, mediana e ruim
-notas_rock_avaliadas = list(map(avaliacao_musicas, notas_rock))
-notas_pop_avaliadas = list(map(avaliacao_musicas, notas_pop))
+    # notas avaliadas de acordo com as categorias boa, mediana e ruim
+    notas_rock_avaliadas = list(map(avaliacao_musicas, notas_rock))
+    notas_pop_avaliadas = list(map(avaliacao_musicas, notas_pop))
 
-# Notas avaliadas em formato booleano
-notas_rock_medianas_booleano = list(map(lambda nota: nota == 'mediana', notas_rock_avaliadas))
-notas_pop_boas_booleano = list(map(lambda nota: nota == 'boa', notas_pop_avaliadas))
+    # Notas avaliadas em formato booleano
+    notas_rock_medianas_booleano = list(map(lambda nota: nota == 'mediana', notas_rock_avaliadas))
+    notas_pop_boas_booleano = list(map(lambda nota: nota == 'boa', notas_pop_avaliadas))
 
-# Mostrar se ha alguma musica de rock que eh mediana
-print(any(notas_rock_medianas_booleano))
+    # Mostrar se ha alguma musica de rock que eh mediana
+    print(any(notas_rock_medianas_booleano))
 
-# Mostrar se todas as musicas de pop sao boas
-print(all(notas_pop_boas_booleano))
+    # Mostrar se todas as musicas de pop sao boas
+    print(all(notas_pop_boas_booleano))
